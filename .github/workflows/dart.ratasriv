@@ -1,0 +1,42 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Dart
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    se ejecuta en : ubuntu-latest
+
+    pasos :
+      - usos : acciones/checkout@v4
+
+      # Nota: Este flujo de trabajo utiliza la última versión estable del SDK de Dart.
+      # Puede especificar otras versiones si lo desea, consulte la documentación aquí:
+      # https://github.com/dart-lang/setup-dart/blob/main/README.md
+      # - usos: dart-lang/setup-dart@v1
+      - usos : dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
+
+      - nombre : Instalar dependencias
+        ejecutar : dart pub obtener
+
+      # Descomente este paso para verificar el uso del 'formato dart' en cada confirmación.
+      # - nombre: Verificar formato
+      # ejecutar: dart formato --output=none --set-exit-if-changed .
+
+      # Considere pasar '--fatal-infos' para un análisis ligeramente más estricto.
+      - nombre : Analizar la fuente del proyecto
+        ejecutar : dardo analizar
+
+      # Su proyecto necesitará tener pruebas en test/ y una dependencia en
+      # paquete:prueba para que este paso se realice correctamente. Tenga en cuenta que los proyectos de Flutter...
+      # quiero cambiar esto a 'prueba de flutter'.
+      - nombre : Ejecutar pruebas
+        ejecutar : prueba de dardos
