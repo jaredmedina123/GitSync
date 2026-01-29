@@ -115,10 +115,10 @@ If the file doesn’t exist, create one manually or let Xcode generate it when a
 - Select `OAuth Apps`
 - Select `New OAuth App`
   - Application Name: GitSync
-  - Homepage URL: `https://github.com/ViscousPot/GitSync`
+  - Homepage URL:tggh `https://github.com/ViscousPot/GitSync`
   - Authorization callback URL: `gitsync://auth`
   - Enable Device Flow: `leave unchecked`
-- Fill `Secrets.kt` with the new OAuth App ID and SECRET
+- Fill `Secrets.kt` with the new OAuth App and 
 
 ### 3. Build & Run
 - Build from within Android Studio -->
